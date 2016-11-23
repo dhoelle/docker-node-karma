@@ -1,10 +1,14 @@
 FROM node
 
+RUN apt-get update && \
+    apt-get install -y xvfb chromium rsync sudo
+
+RUN adduser --disabled-password --gecos '' builder
+RUN adduser builder sudo
+RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+
 # Install Bower & Grunt
 RUN npm install -g bower grunt-cli
-
-RUN apt-get update && \
-    apt-get install -y xvfb chromium rsync
 
 ADD xvfb-chromium /usr/bin/xvfb-chromium
 
