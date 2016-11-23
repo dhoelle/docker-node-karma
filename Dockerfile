@@ -1,7 +1,10 @@
 FROM node
 
+# Install Bower & Grunt
+RUN npm install -g bower grunt-cli
+
 RUN apt-get update && \
-    apt-get install -y xvfb chromium
+    apt-get install -y xvfb chromium rsync
 
 ADD xvfb-chromium /usr/bin/xvfb-chromium
 

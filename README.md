@@ -1,6 +1,5 @@
-# docker-node-karma
-Simplest dumbest possible Node (official image) + xvfb + chrome. Built to run builds including Karma on Wercker,
-but should work for anything.
+# docker-node-karma-grunt-rsync
+Simples Node (official image) + xvfb + chrome + grunt + rsync, based heavily off of https://github.com/pimterry/docker-node-karma.
 
 Chrome is installed for tests to run in it. If you need to use it manually, it's runnable (wrapped with Xvfb) as `google-chrome`.
 
