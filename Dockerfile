@@ -1,9 +1,9 @@
-FROM node
+FROM node:6.9.1
 
 RUN apt-get update && \
     apt-get install -y xvfb chromium rsync sudo
 
-RUN adduser --disabled-password --gecos '' builder
+RUN adduser --home=/home/builder --disabled-password --gecos '' builder
 RUN adduser builder sudo
 RUN echo '%sudo ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
 
